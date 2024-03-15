@@ -24,8 +24,7 @@
         stage(&apos;Fetch&apos;){
             steps{
                 script{
-                    git &apos;https://github.com/Graciano-B-L-Junior/cdmp_django&apos;
-                    sh &apos;docker-compose -f docker-compose.yaml up -d&apos;
+                    sh &apos;ssh root@191.252.210.226&apos;
                 }
             }
         }
