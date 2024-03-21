@@ -1,12 +1,20 @@
+version: '3.1'
+
 services:
   jenkins:
     build: .
+    restart: always
+    ports:
+      - 8001:8001
+      - 8080:8080
+      - 50000:50000
     container_name: jenkins
     volumes:
-      - ./jenkins_data:/var/jenkins_home
+      - jenkins-data:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
-    ports:
-      - "8080:8080"
-    environment:
-      - host_ip=191.252.210.226
-      - username=jenkins
+
+
+volumes:
+  jenkins-data:
+
+      
